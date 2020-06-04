@@ -51,7 +51,7 @@ jobs:
       - gcp-gke/init
       # Update a deployment's Docker image.
       - gcp-gke/rollout-image:
-          deployment: circle-ci-cluster
+          deployment: gke-cluster
           container: dominic-backend
           image: gcr.io/infraestructura-mm/test-ci
 
