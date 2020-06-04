@@ -17,8 +17,6 @@ jobs:
       - run: node --version
       # Install npm
       - node/install-npm
-      # Download and cache dependencies
-      #- node/with-cache:
           steps:
             - run:
                 name: Install application dependencies
