@@ -14,7 +14,6 @@ jobs:
       - checkout
       # Install node
       - node/install
-          install-yarn: true
       - run: node --version
       # Install npm
       - node/install-npm
