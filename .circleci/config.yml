@@ -30,10 +30,8 @@ jobs:
       - gcr/gcr-auth
       - gcr/build-image:
           image:  test-ci
-          google-project-id: "infraestructura-mm"
       - gcr/push-image:
           image:  test-ci
-          google-project-id: "infraestructura-mm"
   deploy:
     description: Deploy application to Google Kubernetes Engine
     machine: true
