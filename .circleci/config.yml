@@ -12,8 +12,6 @@ jobs:
       - checkout
       # Install node
       - node/install
-      # Install npm
-      - node/install-npm
       # Download and cache dependencies
       - node/with-cache:
           steps:
