@@ -1,10 +1,8 @@
 version: 2.1
-
 orbs:
   node: circleci/node@1.0.1
   gcp-gke: circleci/gcp-gke@0.1.0
   gcr: circleci/gcp-gcr@0.0.2
-
 jobs:
   build:
     description: Install npm
@@ -14,7 +12,6 @@ jobs:
       - checkout
       # Install node
       - node/install
-      - run: node --version
       # Install npm
       - node/install-npm
       # Download and cache dependencies
@@ -35,11 +32,10 @@ jobs:
       - gcr/gcr-auth
       - gcr/build-image:
           image: circle-gke
-          tag: "v2"
+          tag: "v2" #Change version number e.g to 'v3' when updating application
       - gcr/push-image:
           image: circle-gke
-          tag: "v2"
-
+          tag: "v2" #Change version number e.g to 'v3' when updating application
     
   deploy:
     description: Deploy application to Google Kubernetes Engine
@@ -49,12 +45,11 @@ jobs:
       - gcp-gke/install
       # Initialize the `gcloud` CLI.
       - gcp-gke/init
-      # Update a deployment's Docker image.
+      # Update a deployment Docker image.
       - gcp-gke/rollout-image:
           deployment: gke-cluster
           container: dominic-backend
-          image: gcr.io/infraestructura-mm/test-ci
-
+          image: gcr.io/infraestructura-mm/test-ci # change version when updating
 workflows:
   build_update_deploy:
     jobs:
@@ -65,4 +60,3 @@ workflows:
       - deploy:
           requires:
             - Build-Push-Image-Docker
-      
