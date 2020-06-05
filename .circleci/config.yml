@@ -30,8 +30,10 @@ jobs:
       - gcr/gcr-auth
       - gcr/build-image:
           image:  test-ci
+          registry-url: eu.gcr.io
       - gcr/push-image:
           image:  test-ci
+          registry-url: eu.gcr.io
   deploy:
     description: Deploy application to Google Kubernetes Engine
     machine: true
