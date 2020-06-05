@@ -5,7 +5,7 @@ metadata:
   labels:
     app: simple-backend
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: ci-deploy
@@ -19,7 +19,7 @@ spec:
         tier: backend
     spec:
       containers:
-        - image: gcr.io/infraestructura-mm/test-ci
+        - image: gcr.io/infraestructura-mm/test-ci:v1
           name: dominic-backend
           ports:
             - containerPort: 3000
