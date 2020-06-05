@@ -29,10 +29,10 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          image: test-ci
+          image: test-ci:v1
           tag: "v2" #Change version number e.g to 'v3' when updating application
       - gcr/push-image:
-          image: test-ci
+          image: test-ci:v1
           tag: "v2" #Change version number e.g to 'v3' when updating application
     
   deploy:
