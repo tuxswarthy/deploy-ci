@@ -29,6 +29,7 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
+          dockerfile: deploy-ci/Dockerfile
           image:  test-ci
       - gcr/push-image:
           image:  test-ci
