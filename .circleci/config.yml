@@ -32,8 +32,12 @@ jobs:
           dockerfile: deploy-ci/Dockerfile
           image:  test-ci
           tag: $CIRCLE_BRANCH
+          path: ~/project/deploy-ci/
       - gcr/push-image:
+          dockerfile: deploy-ci/Dockerfile
           image:  test-ci
+          tag: $CIRCLE_BRANCH
+          path: ~/project/deploy-ci/
   deploy:
     description: Deploy application to Google Kubernetes Engine
     machine: true
