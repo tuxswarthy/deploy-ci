@@ -29,11 +29,9 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          image: circle-gke
-          tag: "v2" #Change version number e.g to 'v3' when updating application
+          image:  gcr.io/infraestructura-mm/test-ci
       - gcr/push-image:
-          image: circle-gke
-          tag: "v2" #Change version number e.g to 'v3' when updating application
+          image:  gcr.io/infraestructura-mm/test-ci
   deploy:
     description: Deploy application to Google Kubernetes Engine
     machine: true
