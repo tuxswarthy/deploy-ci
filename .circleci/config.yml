@@ -32,6 +32,7 @@ jobs:
           dockerfile: deploy-ci/Dockerfile
           image:  test-ci
           tag: $CIRCLE_BRANCH
+          path: ~/project/deploy-ci/
       - gcr/push-image:
           image:  test-ci
   deploy:
