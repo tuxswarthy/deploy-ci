@@ -30,10 +30,10 @@ jobs:
       - gcr/gcr-auth
       - gcr/build-image:
           image:  test-ci
-          registry-url: gcr.io
+          tag: $CIRCLE_BRANCH
+          path: ~/project/deploy-ci
       - gcr/push-image:
           image:  test-ci
-          registry-url: gcr.io
   deploy:
     description: Deploy application to Google Kubernetes Engine
     machine: true
