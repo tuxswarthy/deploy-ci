@@ -32,7 +32,6 @@ jobs:
           dockerfile: deploy-ci/Dockerfile
           image:  test-ci
       - gcr/push-image:
-          dockerfile: deploy-ci/Dockerfile
           image:  test-ci
   deploy:
     description: Deploy application to Google Kubernetes Engine
