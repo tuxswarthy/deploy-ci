@@ -29,9 +29,9 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          image:  gcr.io/infraestructura-mm/test-ci
+          image:  test-ci
       - gcr/push-image:
-          image:  gcr.io/infraestructura-mm/test-ci
+          image:  test-ci
   deploy:
     description: Deploy application to Google Kubernetes Engine
     machine: true
