@@ -30,10 +30,8 @@ jobs:
       - gcr/gcr-auth
       - gcr/build-image:
           image:  test-ci
-          path: /home/circleci/project/deploy.ci
       - gcr/push-image:
           image:  test-ci
-          path: /home/circleci/project/deploy.ci
   deploy:
     description: Deploy application to Google Kubernetes Engine
     machine: true
