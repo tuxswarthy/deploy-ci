@@ -31,7 +31,7 @@ jobs:
       - gcr/build-image:
           image:  test-ci
           tag: $CIRCLE_BRANCH
-          path: ~/project/deploy-ci/
+          path: ~/project/deploy-ci
       - gcr/push-image:
           image:  test-ci
   deploy:
