@@ -29,7 +29,6 @@ jobs:
       - checkout
       - gcr/gcr-auth
       - gcr/build-image:
-          dockerfile: deploy-ci/Dockerfile
           image:  test-ci
           tag: $CIRCLE_BRANCH
           path: ~/project/deploy-ci/
